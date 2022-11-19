@@ -17,10 +17,5 @@ open class ScoreViewInitilizer {
         
         let navigationController = UINavigationController(rootViewController: scoreOverviewController)
         controller.presentViewController(navigationController)
-        
-    }
-    
-    public static func convertToData(from jsonString: String) -> Data {
-        return jsonString.data(using: .utf8) ?? Data()
     }
 }

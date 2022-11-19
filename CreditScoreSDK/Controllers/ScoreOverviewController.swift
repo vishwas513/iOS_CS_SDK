@@ -7,17 +7,16 @@
 
 import UIKit
 
-protocol ScoreOverviewDelegate {
+protocol ScoreOverviewDelegate: AnyObject {
     func showAnalysis()
-    func openARKit(viewImage: UIImage)
+    func openARKit(viewImage: UIImage, modelType: ARModel)
 }
 
 final class ScoreOverviewController: UIViewController {
-    
     private var viewModel: ScoreViewModel!
     private var scoreView: ScoreOverviewView!
     
-    var delegate: ScoreOverviewDelegate?
+    weak var delegate: ScoreOverviewDelegate?
     
     init(scoreViewModel: ScoreViewModel) {
         super.init(nibName: nil, bundle: nil)
@@ -42,11 +41,22 @@ final class ScoreOverviewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupNavBar()
         loadDataIntoView()
     }
     
     private func loadDataIntoView() {
         scoreView.config()
+    }
+    
+    private func setupNavBar() {
+        let appearance = UINavigationBarAppearance()
+        appearance.configureWithOpaqueBackground()
+        appearance.backgroundColor = .black
+
+        navigationController?.navigationBar.tintColor = .white
+        navigationController?.navigationBar.standardAppearance = appearance
+        navigationController?.navigationBar.scrollEdgeAppearance = appearance
     }
 }
 
@@ -57,8 +67,8 @@ extension ScoreOverviewController: ScoreOverviewDelegate {
         navigationController?.pushViewController(controller, animated: true)
     }
     
-    func openARKit(viewImage: UIImage) {
-        let arController = ARController(viewImage: viewImage)
+    func openARKit(viewImage: UIImage, modelType: ARModel) {
+        let arController = ARController(viewImage: viewImage, modelType: modelType)
         navigationController?.pushViewController(arController, animated: true)
     }
 }

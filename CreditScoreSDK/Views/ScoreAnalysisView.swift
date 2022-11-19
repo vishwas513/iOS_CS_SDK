@@ -21,14 +21,19 @@ final class ScoreAnalysisView: UIView {
     
     private func setupView() {
         backgroundColor = .clear
+        
         tableView = UITableView()
-        tableView.translatesAutoresizingMaskIntoConstraints = false
-        tableView.register(AnalysisRangeCell.self, forCellReuseIdentifier: "cell")
+        tableView.setTranslateMaskIntoConstraints()
+        tableView.register(AnalysisRangeCell.self, forCellReuseIdentifier: Constants.analysisCellId)
         tableView.separatorStyle = .none
         tableView.backgroundColor = .clear
         
         addSubview(tableView)
         
+        setupConstraints()
+    }
+    
+    private func setupConstraints() {
         NSLayoutConstraint.activate([
             tableView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
             tableView.leadingAnchor.constraint(equalTo: leadingAnchor),

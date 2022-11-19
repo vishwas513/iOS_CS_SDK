@@ -26,12 +26,9 @@ final class ScoreViewModel {
     func getFormattedDateString() -> String {
         let dateFormatter = DateFormatter()
         let calender = Calendar(identifier: .gregorian)
-        
-        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
+        dateFormatter.dateFormat = Constants.dateFormat
         
         guard let dateObject = dateFormatter.date(from: scoreData.score.lastChecked) else {return ""}
-        
-        
         
         return "As of \(calender.component(.day, from: dateObject))/\(calender.component(.month, from: dateObject))/\(calender.component(.year, from: dateObject))"
     }
@@ -42,5 +39,15 @@ final class ScoreViewModel {
         } else {
             return false
         }
+    }
+    
+    func getRangeWith(score: Int) -> RangeType? {
+        for rangeType in scoreData.scoreRanges {
+            if checkIfScoreInRange(score: score, range: rangeType) {
+                return RangeType(rawValue: rangeType.rangeType)
+            }
+        }
+        
+        return RangeType.poor
     }
 }

@@ -41,10 +41,6 @@ extension CGFloat {
     }
 }
 
-extension UIView {
-
-}
-
 extension UIColor {
     
     static let circleChartBackgroundGrey = UIColor(rgb: 0xF4F4F4)
@@ -83,6 +79,17 @@ extension UITableViewCell {
 }
 
 extension UIView {
+    func addSubviews(views: UIView...) {
+        for view in views {
+            view.translatesAutoresizingMaskIntoConstraints = false
+            self.addSubview(view)
+        }
+    }
+    
+    func setTranslateMaskIntoConstraints() {
+        self.translatesAutoresizingMaskIntoConstraints = false
+    }
+    
     func generateImage() -> UIImage? {
         UIGraphicsBeginImageContextWithOptions(self.bounds.size, false, 0.0)
         defer { UIGraphicsEndImageContext() }
@@ -116,6 +123,33 @@ extension UIImageView {
     func setImageFromBundle(name: String) {
         let bundle = Bundle.get
         self.image = UIImage(named: name, in: bundle, compatibleWith: nil)
+    }
+}
+
+extension UIImage {
+    func setImageFromBundle(name: String) -> UIImage? {
+        let bundle = Bundle.get
+        return UIImage(named: name, in: bundle, compatibleWith: nil)
+    }
+}
+
+extension String {
+    func width(withHeight constrainedHeight: CGFloat, font: UIFont) -> CGFloat {
+        let constraintRect = CGSize(width: .greatestFiniteMagnitude, height: constrainedHeight)
+        let boundingBox = self.boundingRect(with: constraintRect, options: .usesLineFragmentOrigin, attributes: [.font: font], context: nil)
+        return ceil(boundingBox.width)
+    }
+    
+    func height(withWidth constrainedWidth: CGFloat, font: UIFont) -> CGFloat {
+        let constraintRect = CGSize(width: constrainedWidth, height: .greatestFiniteMagnitude)
+        let boundingBox = self.boundingRect(with: constraintRect, options: .usesLineFragmentOrigin, attributes: [.font: font], context: nil)
+        return ceil(boundingBox.height)
+    }
+    
+    func getUnderlineAtributedString() -> NSAttributedString {
+        let underlineAttribute = [NSAttributedString.Key.underlineStyle: NSUnderlineStyle.single.rawValue]
+        let underlineAttributedString = NSAttributedString(string: self, attributes: underlineAttribute)
+        return underlineAttributedString
     }
 }
 

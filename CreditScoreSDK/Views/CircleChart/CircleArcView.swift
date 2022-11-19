@@ -90,12 +90,12 @@ final class CircleArcView: UIView {
     }
     
     func animate() {
-        let animation = CABasicAnimation(keyPath: "strokeEnd")
+        let animation = CABasicAnimation(keyPath: Constants.strokeEndKey)
         animation.timingFunction = CAMediaTimingFunction(name: .easeOut)
         animation.fromValue = 0
         animation.toValue = 1
         animation.duration = 1
         baseLayer.strokeEnd = 1
-        baseLayer.add(animation, forKey: "line")
+        baseLayer.add(animation, forKey: Constants.lineKey)
     }
 }

@@ -11,24 +11,27 @@
 		3A3F278429279A030057C405 /* CreditScoreSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A3F277929279A030057C405 /* CreditScoreSDK.framework */; };
 		3A3F278929279A030057C405 /* CreditScoreSDKTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3F278829279A030057C405 /* CreditScoreSDKTests.swift */; };
 		3A3F278A29279A030057C405 /* CreditScoreSDK.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A3F277C29279A030057C405 /* CreditScoreSDK.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		3A3F279A29279AA10057C405 /* ScoreViewInitilizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3F279529279AA10057C405 /* ScoreViewInitilizer.swift */; };
-		3A3F279B29279AA10057C405 /* ARController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3F279629279AA10057C405 /* ARController.swift */; };
-		3A3F279C29279AA10057C405 /* ScoreOverviewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3F279729279AA10057C405 /* ScoreOverviewController.swift */; };
-		3A3F279D29279AA10057C405 /* ScoreAnalysisController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3F279829279AA10057C405 /* ScoreAnalysisController.swift */; };
 		3A3F27A029279AB80057C405 /* ScoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3F279F29279AB80057C405 /* ScoreData.swift */; };
-		3A3F27AC29279ACD0057C405 /* ScoreAnalysisHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3F27A229279ACD0057C405 /* ScoreAnalysisHeaderView.swift */; };
-		3A3F27AD29279ACD0057C405 /* AnalysisRangeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3F27A429279ACD0057C405 /* AnalysisRangeCell.swift */; };
-		3A3F27AE29279ACD0057C405 /* PointerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3F27A529279ACD0057C405 /* PointerView.swift */; };
-		3A3F27AF29279ACD0057C405 /* ScoreAnalysisView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3F27A629279ACD0057C405 /* ScoreAnalysisView.swift */; };
-		3A3F27B029279ACD0057C405 /* ScoreOverviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3F27A729279ACD0057C405 /* ScoreOverviewView.swift */; };
-		3A3F27B129279ACD0057C405 /* CircleArcView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3F27A929279ACD0057C405 /* CircleArcView.swift */; };
-		3A3F27B229279ACD0057C405 /* CircleScoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3F27AA29279ACD0057C405 /* CircleScoreView.swift */; };
-		3A3F27B329279ACD0057C405 /* CircleProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3F27AB29279ACD0057C405 /* CircleProgressBar.swift */; };
 		3A3F27B829279B060057C405 /* JsonManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3F27B529279B060057C405 /* JsonManager.swift */; };
 		3A3F27B929279B060057C405 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3F27B629279B060057C405 /* Extensions.swift */; };
-		3A3F27BA29279B060057C405 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3F27B729279B060057C405 /* Constants.swift */; };
-		3A3F27BE29279B360057C405 /* ScoreViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3F27BC29279B360057C405 /* ScoreViewModel.swift */; };
 		3A3F27BF29279B360057C405 /* InitlizerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3F27BD29279B360057C405 /* InitlizerViewModel.swift */; };
+		3A3F2837292936C30057C405 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3F2836292936C30057C405 /* Constants.swift */; };
+		3A3F2839292937A00057C405 /* ScoreViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3F2838292937A00057C405 /* ScoreViewModel.swift */; };
+		3A3F283B292937A60057C405 /* ARViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3F283A292937A60057C405 /* ARViewModel.swift */; };
+		3A3F2843292937DC0057C405 /* ScoreViewInitilizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3F283E292937DC0057C405 /* ScoreViewInitilizer.swift */; };
+		3A3F2844292937DC0057C405 /* ARController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3F283F292937DC0057C405 /* ARController.swift */; };
+		3A3F2845292937DC0057C405 /* ScoreOverviewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3F2840292937DC0057C405 /* ScoreOverviewController.swift */; };
+		3A3F2846292937DC0057C405 /* ScoreAnalysisController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3F2841292937DC0057C405 /* ScoreAnalysisController.swift */; };
+		3A3F28542929380A0057C405 /* ScoreAnalysisHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3F28482929380A0057C405 /* ScoreAnalysisHeaderView.swift */; };
+		3A3F28552929380A0057C405 /* AnalysisRangeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3F284A2929380A0057C405 /* AnalysisRangeCell.swift */; };
+		3A3F28562929380A0057C405 /* CustomBarButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3F284B2929380A0057C405 /* CustomBarButtonView.swift */; };
+		3A3F28572929380A0057C405 /* PointerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3F284C2929380A0057C405 /* PointerView.swift */; };
+		3A3F28582929380A0057C405 /* ScoreAnalysisView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3F284D2929380A0057C405 /* ScoreAnalysisView.swift */; };
+		3A3F28592929380A0057C405 /* ScoreOverviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3F284E2929380A0057C405 /* ScoreOverviewView.swift */; };
+		3A3F285A2929380A0057C405 /* ARView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3F284F2929380A0057C405 /* ARView.swift */; };
+		3A3F285B2929380A0057C405 /* CircleArcView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3F28512929380A0057C405 /* CircleArcView.swift */; };
+		3A3F285C2929380A0057C405 /* CircleScoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3F28522929380A0057C405 /* CircleScoreView.swift */; };
+		3A3F285D2929380A0057C405 /* CircleProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3F28532929380A0057C405 /* CircleProgressBar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,24 +50,27 @@
 		3A3F277D29279A030057C405 /* CreditScoreSDK.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = CreditScoreSDK.docc; sourceTree = "<group>"; };
 		3A3F278329279A030057C405 /* CreditScoreSDKTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CreditScoreSDKTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A3F278829279A030057C405 /* CreditScoreSDKTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditScoreSDKTests.swift; sourceTree = "<group>"; };
-		3A3F279529279AA10057C405 /* ScoreViewInitilizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoreViewInitilizer.swift; sourceTree = "<group>"; };
-		3A3F279629279AA10057C405 /* ARController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARController.swift; sourceTree = "<group>"; };
-		3A3F279729279AA10057C405 /* ScoreOverviewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoreOverviewController.swift; sourceTree = "<group>"; };
-		3A3F279829279AA10057C405 /* ScoreAnalysisController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoreAnalysisController.swift; sourceTree = "<group>"; };
 		3A3F279F29279AB80057C405 /* ScoreData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoreData.swift; sourceTree = "<group>"; };
-		3A3F27A229279ACD0057C405 /* ScoreAnalysisHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoreAnalysisHeaderView.swift; sourceTree = "<group>"; };
-		3A3F27A429279ACD0057C405 /* AnalysisRangeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalysisRangeCell.swift; sourceTree = "<group>"; };
-		3A3F27A529279ACD0057C405 /* PointerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PointerView.swift; sourceTree = "<group>"; };
-		3A3F27A629279ACD0057C405 /* ScoreAnalysisView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoreAnalysisView.swift; sourceTree = "<group>"; };
-		3A3F27A729279ACD0057C405 /* ScoreOverviewView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoreOverviewView.swift; sourceTree = "<group>"; };
-		3A3F27A929279ACD0057C405 /* CircleArcView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleArcView.swift; sourceTree = "<group>"; };
-		3A3F27AA29279ACD0057C405 /* CircleScoreView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleScoreView.swift; sourceTree = "<group>"; };
-		3A3F27AB29279ACD0057C405 /* CircleProgressBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleProgressBar.swift; sourceTree = "<group>"; };
 		3A3F27B529279B060057C405 /* JsonManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JsonManager.swift; sourceTree = "<group>"; };
 		3A3F27B629279B060057C405 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
-		3A3F27B729279B060057C405 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		3A3F27BC29279B360057C405 /* ScoreViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoreViewModel.swift; sourceTree = "<group>"; };
 		3A3F27BD29279B360057C405 /* InitlizerViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitlizerViewModel.swift; sourceTree = "<group>"; };
+		3A3F2836292936C30057C405 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		3A3F2838292937A00057C405 /* ScoreViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoreViewModel.swift; sourceTree = "<group>"; };
+		3A3F283A292937A60057C405 /* ARViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARViewModel.swift; sourceTree = "<group>"; };
+		3A3F283E292937DC0057C405 /* ScoreViewInitilizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoreViewInitilizer.swift; sourceTree = "<group>"; };
+		3A3F283F292937DC0057C405 /* ARController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARController.swift; sourceTree = "<group>"; };
+		3A3F2840292937DC0057C405 /* ScoreOverviewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoreOverviewController.swift; sourceTree = "<group>"; };
+		3A3F2841292937DC0057C405 /* ScoreAnalysisController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoreAnalysisController.swift; sourceTree = "<group>"; };
+		3A3F28482929380A0057C405 /* ScoreAnalysisHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoreAnalysisHeaderView.swift; sourceTree = "<group>"; };
+		3A3F284A2929380A0057C405 /* AnalysisRangeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalysisRangeCell.swift; sourceTree = "<group>"; };
+		3A3F284B2929380A0057C405 /* CustomBarButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomBarButtonView.swift; sourceTree = "<group>"; };
+		3A3F284C2929380A0057C405 /* PointerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PointerView.swift; sourceTree = "<group>"; };
+		3A3F284D2929380A0057C405 /* ScoreAnalysisView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoreAnalysisView.swift; sourceTree = "<group>"; };
+		3A3F284E2929380A0057C405 /* ScoreOverviewView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoreOverviewView.swift; sourceTree = "<group>"; };
+		3A3F284F2929380A0057C405 /* ARView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARView.swift; sourceTree = "<group>"; };
+		3A3F28512929380A0057C405 /* CircleArcView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleArcView.swift; sourceTree = "<group>"; };
+		3A3F28522929380A0057C405 /* CircleScoreView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleScoreView.swift; sourceTree = "<group>"; };
+		3A3F28532929380A0057C405 /* CircleProgressBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleProgressBar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,11 +113,11 @@
 		3A3F277B29279A030057C405 /* CreditScoreSDK */ = {
 			isa = PBXGroup;
 			children = (
+				3A3F283C292937DC0057C405 /* Controllers */,
 				3A3F27B429279AE80057C405 /* Utils */,
 				3A3F27BB29279B360057C405 /* ViewModels */,
-				3A3F27A129279ACD0057C405 /* Views */,
 				3A3F279E29279AB80057C405 /* Models */,
-				3A3F279329279AA10057C405 /* Controllers */,
+				3A3F28472929380A0057C405 /* Views */,
 				3A3F277C29279A030057C405 /* CreditScoreSDK.h */,
 				3A3F277D29279A030057C405 /* CreditScoreSDK.docc */,
 			);
@@ -126,17 +132,6 @@
 			path = CreditScoreSDKTests;
 			sourceTree = "<group>";
 		};
-		3A3F279329279AA10057C405 /* Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				3A3F279529279AA10057C405 /* ScoreViewInitilizer.swift */,
-				3A3F279629279AA10057C405 /* ARController.swift */,
-				3A3F279729279AA10057C405 /* ScoreOverviewController.swift */,
-				3A3F279829279AA10057C405 /* ScoreAnalysisController.swift */,
-			);
-			path = Controllers;
-			sourceTree = "<group>";
-		};
 		3A3F279E29279AB80057C405 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -145,41 +140,10 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		3A3F27A129279ACD0057C405 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				3A3F27A229279ACD0057C405 /* ScoreAnalysisHeaderView.swift */,
-				3A3F27A329279ACD0057C405 /* Cells */,
-				3A3F27A529279ACD0057C405 /* PointerView.swift */,
-				3A3F27A629279ACD0057C405 /* ScoreAnalysisView.swift */,
-				3A3F27A729279ACD0057C405 /* ScoreOverviewView.swift */,
-				3A3F27A829279ACD0057C405 /* CircleChart */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		3A3F27A329279ACD0057C405 /* Cells */ = {
-			isa = PBXGroup;
-			children = (
-				3A3F27A429279ACD0057C405 /* AnalysisRangeCell.swift */,
-			);
-			path = Cells;
-			sourceTree = "<group>";
-		};
-		3A3F27A829279ACD0057C405 /* CircleChart */ = {
-			isa = PBXGroup;
-			children = (
-				3A3F27A929279ACD0057C405 /* CircleArcView.swift */,
-				3A3F27AA29279ACD0057C405 /* CircleScoreView.swift */,
-				3A3F27AB29279ACD0057C405 /* CircleProgressBar.swift */,
-			);
-			path = CircleChart;
-			sourceTree = "<group>";
-		};
 		3A3F27B429279AE80057C405 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				3A3F27B729279B060057C405 /* Constants.swift */,
+				3A3F2836292936C30057C405 /* Constants.swift */,
 				3A3F27B629279B060057C405 /* Extensions.swift */,
 				3A3F27B529279B060057C405 /* JsonManager.swift */,
 			);
@@ -189,10 +153,55 @@
 		3A3F27BB29279B360057C405 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				3A3F27BC29279B360057C405 /* ScoreViewModel.swift */,
+				3A3F2838292937A00057C405 /* ScoreViewModel.swift */,
 				3A3F27BD29279B360057C405 /* InitlizerViewModel.swift */,
+				3A3F283A292937A60057C405 /* ARViewModel.swift */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		3A3F283C292937DC0057C405 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				3A3F283E292937DC0057C405 /* ScoreViewInitilizer.swift */,
+				3A3F283F292937DC0057C405 /* ARController.swift */,
+				3A3F2840292937DC0057C405 /* ScoreOverviewController.swift */,
+				3A3F2841292937DC0057C405 /* ScoreAnalysisController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		3A3F28472929380A0057C405 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				3A3F28482929380A0057C405 /* ScoreAnalysisHeaderView.swift */,
+				3A3F28492929380A0057C405 /* Cells */,
+				3A3F284B2929380A0057C405 /* CustomBarButtonView.swift */,
+				3A3F284C2929380A0057C405 /* PointerView.swift */,
+				3A3F284D2929380A0057C405 /* ScoreAnalysisView.swift */,
+				3A3F284E2929380A0057C405 /* ScoreOverviewView.swift */,
+				3A3F284F2929380A0057C405 /* ARView.swift */,
+				3A3F28502929380A0057C405 /* CircleChart */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		3A3F28492929380A0057C405 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				3A3F284A2929380A0057C405 /* AnalysisRangeCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		3A3F28502929380A0057C405 /* CircleChart */ = {
+			isa = PBXGroup;
+			children = (
+				3A3F28512929380A0057C405 /* CircleArcView.swift */,
+				3A3F28522929380A0057C405 /* CircleScoreView.swift */,
+				3A3F28532929380A0057C405 /* CircleProgressBar.swift */,
+			);
+			path = CircleChart;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -304,25 +313,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3A3F27AF29279ACD0057C405 /* ScoreAnalysisView.swift in Sources */,
+				3A3F28582929380A0057C405 /* ScoreAnalysisView.swift in Sources */,
+				3A3F285B2929380A0057C405 /* CircleArcView.swift in Sources */,
+				3A3F2837292936C30057C405 /* Constants.swift in Sources */,
 				3A3F27B829279B060057C405 /* JsonManager.swift in Sources */,
-				3A3F279B29279AA10057C405 /* ARController.swift in Sources */,
-				3A3F279A29279AA10057C405 /* ScoreViewInitilizer.swift in Sources */,
-				3A3F279D29279AA10057C405 /* ScoreAnalysisController.swift in Sources */,
+				3A3F2845292937DC0057C405 /* ScoreOverviewController.swift in Sources */,
 				3A3F27BF29279B360057C405 /* InitlizerViewModel.swift in Sources */,
-				3A3F27AC29279ACD0057C405 /* ScoreAnalysisHeaderView.swift in Sources */,
-				3A3F27B329279ACD0057C405 /* CircleProgressBar.swift in Sources */,
-				3A3F27AD29279ACD0057C405 /* AnalysisRangeCell.swift in Sources */,
-				3A3F27B229279ACD0057C405 /* CircleScoreView.swift in Sources */,
-				3A3F279C29279AA10057C405 /* ScoreOverviewController.swift in Sources */,
-				3A3F27B029279ACD0057C405 /* ScoreOverviewView.swift in Sources */,
-				3A3F27BE29279B360057C405 /* ScoreViewModel.swift in Sources */,
+				3A3F2846292937DC0057C405 /* ScoreAnalysisController.swift in Sources */,
+				3A3F2844292937DC0057C405 /* ARController.swift in Sources */,
+				3A3F2839292937A00057C405 /* ScoreViewModel.swift in Sources */,
+				3A3F28592929380A0057C405 /* ScoreOverviewView.swift in Sources */,
 				3A3F27A029279AB80057C405 /* ScoreData.swift in Sources */,
-				3A3F27AE29279ACD0057C405 /* PointerView.swift in Sources */,
+				3A3F285A2929380A0057C405 /* ARView.swift in Sources */,
+				3A3F28572929380A0057C405 /* PointerView.swift in Sources */,
+				3A3F28542929380A0057C405 /* ScoreAnalysisHeaderView.swift in Sources */,
+				3A3F285C2929380A0057C405 /* CircleScoreView.swift in Sources */,
+				3A3F28552929380A0057C405 /* AnalysisRangeCell.swift in Sources */,
+				3A3F285D2929380A0057C405 /* CircleProgressBar.swift in Sources */,
+				3A3F2843292937DC0057C405 /* ScoreViewInitilizer.swift in Sources */,
+				3A3F28562929380A0057C405 /* CustomBarButtonView.swift in Sources */,
+				3A3F283B292937A60057C405 /* ARViewModel.swift in Sources */,
 				3A3F27B929279B060057C405 /* Extensions.swift in Sources */,
-				3A3F27B129279ACD0057C405 /* CircleArcView.swift in Sources */,
 				3A3F277E29279A030057C405 /* CreditScoreSDK.docc in Sources */,
-				3A3F27BA29279B060057C405 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,11 +8,11 @@
 import UIKit
 
 final class ScoreAnalysisHeaderView: UIView {
-    private var headerText = String()
-    
     private var iconImageView: UIImageView!
     private var headerLabel: UILabel!
     private var iButton: UIButton!
+    
+    private var headerText = String()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -30,18 +30,16 @@ final class ScoreAnalysisHeaderView: UIView {
     
     private func setupView() {
         backgroundColor = .clear
+        
         iconImageView = UIImageView()
-        iconImageView.translatesAutoresizingMaskIntoConstraints = false
         iconImageView.setImageFromBundle(name: "radar")
         
         headerLabel = UILabel()
-        headerLabel.translatesAutoresizingMaskIntoConstraints = false
         headerLabel.text = headerText
         headerLabel.textColor = .black
         headerLabel.font = .systemFont(ofSize: 24, weight: .medium)
         
-        addSubview(iconImageView)
-        addSubview(headerLabel)
+        addSubviews(views: iconImageView, headerLabel)
         
         NSLayoutConstraint.activate([
             iconImageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: Constants.Padding.k50),

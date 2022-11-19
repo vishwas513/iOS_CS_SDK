@@ -11,12 +11,13 @@ final class ScoreOverviewView: UIView {
     private var viewModel: ScoreViewModel!
     
     private var containerView: UIView!
-    
     private var circleProgressBar: CircleProgressBar!
     private var rangeStartLabel: UILabel!
     private var rangeEndLabel: UILabel!
     private var lastCheckedOnLabel: UILabel!
+    private var lensLabel: UILabel!
     private var scoreAnalysisButton: UIButton!
+    private var arLabel: UIButton!
     private var arKitButton: UIButton!
     
     var delegate: ScoreOverviewDelegate?
@@ -41,59 +42,51 @@ final class ScoreOverviewView: UIView {
         backgroundColor = .white
         
         containerView = UIView()
-        containerView.translatesAutoresizingMaskIntoConstraints = false
         containerView.backgroundColor = .clear
         
         circleProgressBar = CircleProgressBar()
-        circleProgressBar.translatesAutoresizingMaskIntoConstraints = false
-        circleProgressBar.backgroundColor = .clear
         
         rangeStartLabel = UILabel()
-        rangeStartLabel.translatesAutoresizingMaskIntoConstraints = false
         rangeStartLabel.font = .systemFont(ofSize: 14, weight: .semibold)
         rangeStartLabel.textColor = .black
         
-        
         rangeEndLabel = UILabel()
-        rangeEndLabel.translatesAutoresizingMaskIntoConstraints = false
         rangeEndLabel.font = .systemFont(ofSize: 14, weight: .semibold)
         rangeEndLabel.textColor = .black
        
-        
         lastCheckedOnLabel = UILabel()
-        lastCheckedOnLabel.translatesAutoresizingMaskIntoConstraints = false
         lastCheckedOnLabel.font = .systemFont(ofSize: 14, weight: .semibold)
         lastCheckedOnLabel.textColor = .black
         
+        lensLabel = UILabel()
+        lensLabel.text = Constants.lensUnicodeCharacter
+        
         scoreAnalysisButton = UIButton()
-        scoreAnalysisButton.translatesAutoresizingMaskIntoConstraints = false
-        scoreAnalysisButton.setTitle("hi", for: .normal)
-        
-        arKitButton = UIButton()
-        arKitButton.translatesAutoresizingMaskIntoConstraints = false
-        arKitButton.setTitle("ARKit view", for: .normal)
-        arKitButton.setTitleColor(.green, for: .normal)
-        arKitButton.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
-        
-        let underlineAttribute = [NSAttributedString.Key.underlineStyle: NSUnderlineStyle.thick.rawValue]
-        let underlineAttributedString = NSAttributedString(string: "🔍   See my Score Analysis", attributes: underlineAttribute)
-        scoreAnalysisButton.setAttributedTitle(underlineAttributedString, for: .normal)
+        scoreAnalysisButton.setAttributedTitle(Constants.seeMyScoreAnalysisText.getUnderlineAtributedString(), for: .normal)
         scoreAnalysisButton.addTarget(self, action: #selector(scoreAnalysisButtonTapped), for: .touchUpInside)
         scoreAnalysisButton.setTitleColor(.blue, for: .normal)
         
-        addSubview(containerView)
-        containerView.addSubview(circleProgressBar)
-        containerView.addSubview(rangeStartLabel)
-        containerView.addSubview(rangeEndLabel)
-        containerView.addSubview(lastCheckedOnLabel)
-        addSubview(scoreAnalysisButton)
-        addSubview(arKitButton)
+        arLabel = UIButton()
+        arLabel.addTarget(self, action: #selector(arButtonTapped), for: .touchUpInside)
+        arLabel.setTitle(Constants.showARButtonText, for: .normal)
+        arLabel.setTitleColor(.blue, for: .normal)
         
+        arKitButton = UIButton()
+        arKitButton.setImage(UIImage().setImageFromBundle(name: "ar"), for: .normal)
+        arKitButton.setTitleColor(.green, for: .normal)
+        arKitButton.addTarget(self, action: #selector(arButtonTapped), for: .touchUpInside)
+        arKitButton.setTitleColor(.blue, for: .normal)
+        
+        containerView.addSubviews(views: circleProgressBar, rangeStartLabel, rangeEndLabel, lastCheckedOnLabel)
+        addSubviews(views: containerView, lensLabel, scoreAnalysisButton, arLabel, arKitButton)
+        
+        setupConstraints()
+    }
+    
+    private func setupConstraints() {
         NSLayoutConstraint.activate([
-            
-            containerView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: Constants.Padding.k60),
-            containerView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
-            containerView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: Constants.Padding.k60.negative),
+            containerView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: Constants.Padding.k30),
+            containerView.centerXAnchor.constraint(equalTo: centerXAnchor),
             
             circleProgressBar.leadingAnchor.constraint(equalTo: containerView.leadingAnchor),
             circleProgressBar.topAnchor.constraint(equalTo: containerView.topAnchor),
@@ -109,18 +102,26 @@ final class ScoreOverviewView: UIView {
             lastCheckedOnLabel.topAnchor.constraint(equalTo: circleProgressBar.bottomAnchor, constant: Constants.Padding.k30),
             lastCheckedOnLabel.bottomAnchor.constraint(equalTo: containerView.bottomAnchor, constant: Constants.Padding.k8.negative),
             
+            lensLabel.trailingAnchor.constraint(equalTo: scoreAnalysisButton.leadingAnchor, constant: Constants.Padding.k8.negative),
+            lensLabel.centerYAnchor.constraint(equalTo: scoreAnalysisButton.centerYAnchor),
+            
             scoreAnalysisButton.centerXAnchor.constraint(equalTo: circleProgressBar.centerXAnchor),
             scoreAnalysisButton.bottomAnchor.constraint(equalTo: bottomAnchor, constant: Constants.Padding.k60.negative),
             
+            arLabel.centerXAnchor.constraint(equalTo: centerXAnchor, constant: Constants.Padding.k16.negative),
+            arLabel.centerYAnchor.constraint(equalTo: arKitButton.centerYAnchor),
+            
             arKitButton.bottomAnchor.constraint(equalTo: scoreAnalysisButton.topAnchor, constant: -60),
-            arKitButton.centerXAnchor.constraint(equalTo: centerXAnchor),
+            arKitButton.leadingAnchor.constraint(equalTo: arLabel.trailingAnchor, constant: Constants.Padding.k4),
+            arKitButton.widthAnchor.constraint(equalToConstant: Constants.Padding.k40),
+            arKitButton.heightAnchor.constraint(equalToConstant: Constants.Padding.k40),
         ])
     }
 }
 
 extension ScoreOverviewView {
     func config() {
-        guard let rangeType = RangeType(rawValue: viewModel.scoreData.score.rangeType) else { return }
+        guard let rangeType = viewModel.getRangeWith(score: viewModel.scoreData.score.value) else { return }
         
         circleProgressBar.config(progressArcStartColor: rangeType.getColor(), endColor: rangeType.getColor(), backgroundArcColor: .circleChartBackgroundGrey)
         circleProgressBar.set(progress: viewModel.getPercentage())
@@ -138,19 +139,17 @@ extension ScoreOverviewView {
     }
 }
 
-@objc extension ScoreOverviewView {
+@objc private extension ScoreOverviewView {
     func scoreAnalysisButtonTapped() {
         delegate?.showAnalysis()
     }
     
-    func buttonTapped() {
+    func arButtonTapped() {
         rangeStartLabel.textColor = .white
         rangeEndLabel.textColor = .white
         lastCheckedOnLabel.textColor = .white
         if let viewImage = containerView.generateImage() {
-            delegate?.openARKit(viewImage: viewImage)
+            delegate?.openARKit(viewImage: viewImage, modelType: .overview)
         }
-        
     }
 }
-

@@ -11,15 +11,19 @@ import SceneKit
 
 final class ARController: UIViewController {
     
-    private var sceneView: ARSCNView!
     private var pinchGesture: UIPinchGestureRecognizer!
     private var tapGesture: UITapGestureRecognizer!
-    
+
     private var viewImage: UIImage!
+    private var modelType: ARModel!
+    private var arView: ARView!
+    
+    private var viewModel = ARViewModel()
     private var inputNode = SCNNode()
     
-    init(viewImage: UIImage) {
+    init(viewImage: UIImage, modelType: ARModel) {
         super.init(nibName: nil, bundle: nil)
+        self.modelType = modelType
         self.viewImage = viewImage
     }
     
@@ -27,51 +31,32 @@ final class ARController: UIViewController {
         fatalError(Constants.fatalErrorText)
     }
     
+    override func loadView() {
+        super.loadView()
+        arView = ARView(viewModel: viewModel)
+        view = arView
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .white
 
-        sceneView = ARSCNView()
-        sceneView.translatesAutoresizingMaskIntoConstraints = false
-        
         pinchGesture = UIPinchGestureRecognizer(target: self, action: #selector(pinchGestureDetected))
         pinchGesture.delegate = self
-        sceneView.addGestureRecognizer(pinchGesture)
+        arView.associatePinchGesture(with: pinchGesture)
         
         tapGesture = UITapGestureRecognizer(target: self, action: #selector(tapGestureDetected))
         tapGesture.delegate = self
-        sceneView.addGestureRecognizer(tapGesture)
+        arView.associateTapGesture(with: tapGesture)
         
-        view.addSubview(sceneView)
-        
-        NSLayoutConstraint.activate([
-            sceneView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            sceneView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-            sceneView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            sceneView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-        ])
+        arView.showToast()
     }
-    
-    
-//    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-//        sceneView.session.pause()
-//            sceneView.scene.rootNode.enumerateChildNodes { (node, stop) in
-//                node.removeFromParentNode()
-//            }
-//
-//            let configuration = ARWorldTrackingConfiguration()
-//            configuration.planeDetection = .vertical
-//            sceneView.session.run(configuration, options: [.resetTracking, .removeExistingAnchors])
-//    }
     
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.setNavigationBarHidden(false, animated: false)
-        let configuration = ARWorldTrackingConfiguration()
-        configuration.planeDetection = .vertical
-        
-        sceneView.session.run(configuration)
-        sceneView.delegate = self
-        
-        inputNode = make2DNode(image: viewImage)
+        arView.setDelegate(with: self)
+        arView.initilizeARScene()
+        inputNode = viewModel.make2DNode(image: viewImage, modelType: modelType)
     }
 }
 
@@ -80,23 +65,12 @@ extension ARController: ARSCNViewDelegate {
         inputNode.position = SCNVector3Zero
         inputNode.position.y = SCNVector3Zero.y
         
-        let configuration = ARWorldTrackingConfiguration()
-        configuration.planeDetection = []
-        self.sceneView.session.run(configuration)
-        
+        arView.stopPlaneDetection()
         return inputNode
-    }
-    
-    func make2DNode(image: UIImage, width: CGFloat = 1.7, height: CGFloat = 2) -> SCNNode {
-        let plane = SCNPlane(width: width, height: height)
-        plane.firstMaterial!.diffuse.contents = image
-        let node = SCNNode(geometry: plane)
-        node.constraints = [SCNBillboardConstraint()]
-        return node
     }
 }
 
-@objc extension ARController {
+@objc extension ARController: UIGestureRecognizerDelegate {
     func pinchGestureDetected() {
         if (pinchGesture.state == .changed) {
             let pinchScaleX = Float(pinchGesture.scale) * inputNode.scale.x
@@ -108,17 +82,6 @@ extension ARController: ARSCNViewDelegate {
     }
     
     func tapGestureDetected() {
-        sceneView.session.pause()
-        sceneView.scene.rootNode.enumerateChildNodes { (node, stop) in
-            node.removeFromParentNode()
-        }
-        
-        let configuration = ARWorldTrackingConfiguration()
-        configuration.planeDetection = .vertical
-        sceneView.session.run(configuration, options: [.resetTracking, .removeExistingAnchors])
+        arView.resetARScene()
     }
-}
-
-extension ARController: UIGestureRecognizerDelegate {
-    
 }

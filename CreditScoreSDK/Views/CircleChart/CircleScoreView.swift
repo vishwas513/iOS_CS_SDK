@@ -20,25 +20,29 @@ final class CircleScoreView: UIView {
     }
     
     private func setupView() {
-        backgroundColor = .red
         createHeaderLabel()
     }
     
     private func createHeaderLabel() {
-        headerLabel = UILabel()//ZLabel(type: .h2, color: ZLabelColor.inverse, alignment: .center)
+        headerLabel = UILabel()
+        headerLabel.setTranslateMaskIntoConstraints()
         headerLabel.font = .systemFont(ofSize: 60, weight: .bold)
-        headerLabel.translatesAutoresizingMaskIntoConstraints = false
         addSubview(headerLabel)
         
+        setupConstraints()
+    }
+    
+    private func setupConstraints() {
         NSLayoutConstraint.activate([
             headerLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
             headerLabel.centerYAnchor.constraint(equalTo: centerYAnchor)
         ])
     }
-    
+}
+
+extension CircleScoreView {
     func set(title titleText: String, with colour: UIColor) {
         headerLabel.text = titleText
         headerLabel.textColor = colour
-        backgroundColor = .red
     }
 }
