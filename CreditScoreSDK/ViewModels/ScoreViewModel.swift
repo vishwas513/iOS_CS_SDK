@@ -14,7 +14,7 @@ open class ScoreViewModel {
         scoreData = data
     }
     
-    func getPercentage() -> Int {
+    open func getPercentage() -> Int {
         let score = Float(scoreData.score.value)
         let rangeEnd = Float(scoreData.scoreOverview.rangeEnd)
         let rangeStart = Float(scoreData.scoreOverview.rangeStart)
@@ -23,7 +23,7 @@ open class ScoreViewModel {
         return Int(percentage)
     }
     
-    func getFormattedDateString() -> String {
+    open func getFormattedDateString() -> String {
         let dateFormatter = DateFormatter()
         let calender = Calendar(identifier: .gregorian)
         dateFormatter.dateFormat = Constants.dateFormat
@@ -33,7 +33,7 @@ open class ScoreViewModel {
         return "As of \(calender.component(.day, from: dateObject))/\(calender.component(.month, from: dateObject))/\(calender.component(.year, from: dateObject))"
     }
     
-    func checkIfScoreInRange(score: Int, range: ScoreRange) -> Bool {
+    open func checkIfScoreInRange(score: Int, range: ScoreRange) -> Bool {
         if score >= range.rangeStart && score <= range.rangeEnd {
             return true
         } else {
@@ -41,7 +41,7 @@ open class ScoreViewModel {
         }
     }
     
-    func getRangeWith(score: Int) -> RangeType? {
+    open func getRangeWith(score: Int) -> RangeType? {
         for rangeType in scoreData.scoreRanges {
             if checkIfScoreInRange(score: score, range: rangeType) {
                 return RangeType(rawValue: rangeType.rangeType)

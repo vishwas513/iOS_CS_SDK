@@ -19,7 +19,7 @@ open class ScoreViewInitilizer {
         controller.presentViewController(navigationController)
     }
     
-    public static func openJsonFile(fileName: String) -> Data {
+    public static func openJsonFile(fileName: String) -> Data? {
         var data: Data?
         if let path = Bundle.main.path(forResource: fileName, ofType: "json") {
             do {
@@ -29,6 +29,6 @@ open class ScoreViewInitilizer {
             }
         }
         
-        return data ?? Data()
+        return data
     }
 }

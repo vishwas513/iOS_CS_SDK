@@ -8,31 +8,31 @@
 import Foundation
 import UIKit
 
-struct ScoreData: Decodable {
+public struct ScoreData: Decodable {
     var score: Score
     var scoreOverview: ScoreOverview
     var scoreRanges: [ScoreRange]
 }
 
-struct Score: Decodable {
+public struct Score: Decodable {
     var value: Int
     var rangeType: String
     var lastChecked: String
 }
 
-struct ScoreOverview: Decodable {
+public struct ScoreOverview: Decodable {
     var rangeStart: Int
     var rangeEnd: Int
 }
 
-struct ScoreRange: Decodable {
+public struct ScoreRange: Decodable {
     var rangeStart: Int
     var rangeEnd: Int
     var rangeType: String
     var percentageOfRange: Int
 }
 
-enum RangeType: String {
+public enum RangeType: String {
     case poor, belowAverage, average, good, excellent
     
     func getColor() -> UIColor {

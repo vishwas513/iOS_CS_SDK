@@ -37,5 +37,4 @@ open class ARViewModel {
         node.constraints = [SCNBillboardConstraint()]
         return node
     }
-    
 }
