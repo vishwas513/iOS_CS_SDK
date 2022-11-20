@@ -108,7 +108,7 @@ extension Bundle {
     static var get: Bundle? {
         let frameWorkBundle = Bundle(for: BundleIdentifyingClass.self)
         
-        guard let bundleURL = frameWorkBundle.url(forResource: "ZMSBundle", withExtension: "bundle") else {
+        guard let bundleURL = frameWorkBundle.url(forResource: "ScoreBundle", withExtension: "bundle") else {
            print("Bundle Not found")
             return nil }
         guard let bundle = Bundle(url: bundleURL) else {
