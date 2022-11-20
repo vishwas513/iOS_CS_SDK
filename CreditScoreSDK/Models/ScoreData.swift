@@ -9,26 +9,25 @@ import Foundation
 import UIKit
 
 public struct ScoreData: Decodable {
-    var score: Score
-    var scoreOverview: ScoreOverview
-    var scoreRanges: [ScoreRange]
+    public var score: Score
+    public var scoreOverview: ScoreOverview
+    public var scoreRanges: [ScoreRange]
 }
 
 public struct Score: Decodable {
-    var value: Int
-    var rangeType: String
-    var lastChecked: String
+    public var value: Int
+    public var lastChecked: String
 }
 
 public struct ScoreOverview: Decodable {
-    var rangeStart: Int
-    var rangeEnd: Int
+    public var rangeStart: Int
+    public var rangeEnd: Int
 }
 
 public struct ScoreRange: Decodable {
-    var rangeStart: Int
-    var rangeEnd: Int
-    var rangeType: String
+    public var rangeStart: Int
+    public var rangeEnd: Int
+    public var rangeType: String
     var percentageOfRange: Int
 }
 
