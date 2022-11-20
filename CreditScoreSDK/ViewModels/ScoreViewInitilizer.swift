@@ -8,6 +8,9 @@
 import UIKit
 
 open class ScoreViewInitilizer {
+    
+    public init() {}
+    
     private static let viewModel = InitlizerViewModel()
     
     public static func initiateAppFlow(with controller: UIViewController, jsonData: Data) {
@@ -28,7 +31,6 @@ open class ScoreViewInitilizer {
                 print(error)
             }
         }
-        
         return data
     }
 }

@@ -23,6 +23,8 @@ enum ARModel {
 }
 
 open class ARViewModel {
+    public init() {}
+    
     var configuration: ARWorldTrackingConfiguration {
         let configuration = ARWorldTrackingConfiguration()
         configuration.planeDetection = .vertical
