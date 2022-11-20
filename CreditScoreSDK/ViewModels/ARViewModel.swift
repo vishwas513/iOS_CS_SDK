@@ -8,7 +8,7 @@
 import Foundation
 import ARKit
 
-enum ARModel {
+public enum ARModel {
     case overview, analysis
     
     func getSize() -> CGSize {
@@ -25,13 +25,13 @@ enum ARModel {
 open class ARViewModel {
     public init() {}
     
-    var configuration: ARWorldTrackingConfiguration {
+    open var configuration: ARWorldTrackingConfiguration {
         let configuration = ARWorldTrackingConfiguration()
         configuration.planeDetection = .vertical
         return configuration
     }
     
-    func make2DNode(image: UIImage, modelType: ARModel) -> SCNNode {
+    open func make2DNode(image: UIImage, modelType: ARModel) -> SCNNode {
         let size = modelType.getSize()
         let plane = SCNPlane(width: size.width, height: size.height)
         plane.firstMaterial!.diffuse.contents = image
