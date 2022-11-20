@@ -14,7 +14,7 @@ enum ARModel {
     func getSize() -> CGSize {
         switch self {
         case .overview:
-            return CGSize(width: 1.2, height: 1.5)
+            return CGSize(width: 1.2, height: 1.4)
         case .analysis:
             return CGSize(width: 1.5, height: 3)
         }
@@ -22,7 +22,7 @@ enum ARModel {
     }
 }
 
-final class ARViewModel {
+open class ARViewModel {
     var configuration: ARWorldTrackingConfiguration {
         let configuration = ARWorldTrackingConfiguration()
         configuration.planeDetection = .vertical

@@ -7,7 +7,7 @@
 
 import Foundation
 
-final class ScoreViewModel {
+open class ScoreViewModel {
     var scoreData: ScoreData!
     
     init(with data: ScoreData) {

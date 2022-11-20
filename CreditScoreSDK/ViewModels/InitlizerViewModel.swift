@@ -7,7 +7,7 @@
 
 import Foundation
 
-final class InitlizerViewModel {
+open class InitlizerViewModel {
     func parseData(with data: Data) -> ScoreData? {
         do {
             let jsonDecoder = JSONDecoder()

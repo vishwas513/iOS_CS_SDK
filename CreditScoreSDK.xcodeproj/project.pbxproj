@@ -12,7 +12,6 @@
 		3A3F278929279A030057C405 /* CreditScoreSDKTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3F278829279A030057C405 /* CreditScoreSDKTests.swift */; };
 		3A3F278A29279A030057C405 /* CreditScoreSDK.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A3F277C29279A030057C405 /* CreditScoreSDK.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3A3F27A029279AB80057C405 /* ScoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3F279F29279AB80057C405 /* ScoreData.swift */; };
-		3A3F27B829279B060057C405 /* JsonManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3F27B529279B060057C405 /* JsonManager.swift */; };
 		3A3F27B929279B060057C405 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3F27B629279B060057C405 /* Extensions.swift */; };
 		3A3F27BF29279B360057C405 /* InitlizerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3F27BD29279B360057C405 /* InitlizerViewModel.swift */; };
 		3A3F2837292936C30057C405 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3F2836292936C30057C405 /* Constants.swift */; };
@@ -51,7 +50,6 @@
 		3A3F278329279A030057C405 /* CreditScoreSDKTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CreditScoreSDKTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A3F278829279A030057C405 /* CreditScoreSDKTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditScoreSDKTests.swift; sourceTree = "<group>"; };
 		3A3F279F29279AB80057C405 /* ScoreData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoreData.swift; sourceTree = "<group>"; };
-		3A3F27B529279B060057C405 /* JsonManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JsonManager.swift; sourceTree = "<group>"; };
 		3A3F27B629279B060057C405 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		3A3F27BD29279B360057C405 /* InitlizerViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitlizerViewModel.swift; sourceTree = "<group>"; };
 		3A3F2836292936C30057C405 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -145,7 +143,6 @@
 			children = (
 				3A3F2836292936C30057C405 /* Constants.swift */,
 				3A3F27B629279B060057C405 /* Extensions.swift */,
-				3A3F27B529279B060057C405 /* JsonManager.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -153,6 +150,7 @@
 		3A3F27BB29279B360057C405 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				3A3F283E292937DC0057C405 /* ScoreViewInitilizer.swift */,
 				3A3F2838292937A00057C405 /* ScoreViewModel.swift */,
 				3A3F27BD29279B360057C405 /* InitlizerViewModel.swift */,
 				3A3F283A292937A60057C405 /* ARViewModel.swift */,
@@ -163,7 +161,6 @@
 		3A3F283C292937DC0057C405 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				3A3F283E292937DC0057C405 /* ScoreViewInitilizer.swift */,
 				3A3F283F292937DC0057C405 /* ARController.swift */,
 				3A3F2840292937DC0057C405 /* ScoreOverviewController.swift */,
 				3A3F2841292937DC0057C405 /* ScoreAnalysisController.swift */,
@@ -316,7 +313,6 @@
 				3A3F28582929380A0057C405 /* ScoreAnalysisView.swift in Sources */,
 				3A3F285B2929380A0057C405 /* CircleArcView.swift in Sources */,
 				3A3F2837292936C30057C405 /* Constants.swift in Sources */,
-				3A3F27B829279B060057C405 /* JsonManager.swift in Sources */,
 				3A3F2845292937DC0057C405 /* ScoreOverviewController.swift in Sources */,
 				3A3F27BF29279B360057C405 /* InitlizerViewModel.swift in Sources */,
 				3A3F2846292937DC0057C405 /* ScoreAnalysisController.swift in Sources */,
